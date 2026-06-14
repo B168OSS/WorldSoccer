@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
+  --radius: 0px;
+
+  /* Redefine indigo system colors to a stark high-contrast monochromatic gray/slate scale */
+  --color-indigo-50: #f8fafc;
+  --color-indigo-100: #f1f5f9;
+  --color-indigo-200: #e2e8f0;
+  --color-indigo-300: #cbd5e1;
+  --color-indigo-400: #e2e8f0;
+  --color-indigo-500: #ffffff;
+  --color-indigo-600: #18181b;
+  --color-indigo-700: #27272a;
+  --color-indigo-800: #3f3f46;
+  --color-indigo-900: #09090b;
+  --color-indigo-950: #000000;
+  
+  /* Redefine emerald, teal, and slate colors to high contrast monochrome */
+  --color-emerald-400: #ffffff;
+  --color-emerald-500: #ffffff;
+  
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom visual sync-pulse rotational animation for offline uploading after reconnecting */
+@keyframes syncPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+  }
+  50% {
+    transform: scale(1.35) rotate(180deg);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+  }
+}
+
+.animate-sync-pulse {
+  animation: syncPulse 1.8s infinite ease-in-out;
+}
+
+/* Stark grid and geometric spacing helpers */
+.geometric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.geometric-border {
+  border: 1px solid #ffffff;
+}
+
+.geometric-btn {
+  border: 1px solid #ffffff;
+  background-color: #000000;
+  color: #ffffff;
+  transition: all 0.15s ease-in-out;
+}
+
+.geometric-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
